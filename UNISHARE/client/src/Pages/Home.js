@@ -40,25 +40,25 @@ const Home = () => {
     fetchProducts();
   }, []);
 
-  const renderApprovedProducts = () => {
-    return products.slice(0,6).map((product) => {
-      if (product.isApproved) {
-        return (
-          <div key={product._id} className="bg-white shadow-2xl p-4 rounded-2xl">
-            <img
-              src={product.productImage}
-              alt={product.productName}
-              className="w-full h-32 object-cover mb-4 rounded-md"
-            />
-            <h3 className="text-lg font-semibold mb-2">{product.productName}</h3>
-            <p className="text-sm text-gray-600 mb-2">{product.description}</p>
-            <Link to={`/products/${product._id}`} className="text-black">View Details</Link>
-          </div>
-        );
-      }
-      return null; // Skip rendering if product is not approved
-    });
-  };
+  // const renderApprovedProducts = () => {
+  //   return products.slice(0,6).map((product) => {
+  //     if (product.isApproved) {
+  //       return (
+  //         <div key={product._id} className="bg-white shadow-2xl p-4 rounded-2xl">
+  //           <img
+  //             src={product.productImage}
+  //             alt={product.productName}
+  //             className="w-full h-32 object-cover mb-4 rounded-md"
+  //           />
+  //           <h3 className="text-lg font-semibold mb-2">{product.productName}</h3>
+  //           <p className="text-sm text-gray-600 mb-2">{product.description}</p>
+  //           <Link to={`/products/${product._id}`} className="text-black">View Details</Link>
+  //         </div>
+  //       );
+  //     }
+  //     return null; // Skip rendering if product is not approved
+  //   });
+  // };
 
   const isLoggedIn = () => {
     const authToken = localStorage.getItem('auth');
