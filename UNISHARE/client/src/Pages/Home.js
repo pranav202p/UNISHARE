@@ -40,25 +40,25 @@ const Home = () => {
     fetchProducts();
   }, []);
 
-  // const renderApprovedProducts = () => {
-  //   return products.slice(0,6).map((product) => {
-  //     if (product.isApproved) {
-  //       return (
-  //         <div key={product._id} className="bg-white shadow-2xl p-4 rounded-2xl">
-  //           <img
-  //             src={product.productImage}
-  //             alt={product.productName}
-  //             className="w-full h-32 object-cover mb-4 rounded-md"
-  //           />
-  //           <h3 className="text-lg font-semibold mb-2">{product.productName}</h3>
-  //           <p className="text-sm text-gray-600 mb-2">{product.description}</p>
-  //           <Link to={`/products/${product._id}`} className="text-black">View Details</Link>
-  //         </div>
-  //       );
-  //     }
-  //     return null; // Skip rendering if product is not approved
-  //   });
-  // };
+  const renderApprovedProducts = () => {
+    return products.slice(0,6).map((product) => {
+      if (product.isApproved) {
+        return (
+          <div key={product._id} className="bg-white shadow-2xl p-4 rounded-2xl">
+            <img
+              src={product.productImage}
+              alt={product.productName}
+              className="w-full h-32 object-cover mb-4 rounded-md"
+            />
+            <h3 className="text-lg font-semibold mb-2">{product.productName}</h3>
+            <p className="text-sm text-gray-600 mb-2">{product.description}</p>
+            <Link to={`/products/${product._id}`} className="text-black">View Details</Link>
+          </div>
+        );
+      }
+      return null; // Skip rendering if product is not approved
+    });
+  };
 
   const isLoggedIn = () => {
     const authToken = localStorage.getItem('auth');
@@ -80,14 +80,14 @@ const Home = () => {
         </section>
       </Parallax>
       {/* Featured Resources Section */}
-      <section className="py-12 p-11 bg-white">
+      {/* <section className="py-12 p-11 bg-white">
         <div className="container mx-auto px-4 p-24">
           <h2 className="text-3xl font-bold text-center mb-6">Featured Resources</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {renderApprovedProducts()}
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* About Us Section with Background Image and Parallax Effect */}
       
