@@ -1,0 +1,22 @@
+{
+    "functions": {
+      "server/api/**/*.js": {
+        "runtime": "nodejs18.x",
+        "memory": 1024,
+        "maxDuration": 10
+      }
+    },
+    "builds": [
+      {
+        "src": "server/api/**/*.js",
+        "use": "@vercel/node"
+      }
+    ],
+    "routes": [
+      {
+        "src": "/api/(.*)",
+        "dest": "/server/api/$1.js"
+      }
+    ]
+  }
+  
