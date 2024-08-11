@@ -88,9 +88,7 @@ io.on('connection', (socket) => {
 
 // API routes
 app.use('/api/v1/auth', authRoutes);
-app.get("/",(req,res)=>{
-    res.json("Hello")
-})
+
 const PORT = process.env.PORT || 8080;
 server.listen(PORT, () => {
     console.log(`Server Running on ${PORT}`);
