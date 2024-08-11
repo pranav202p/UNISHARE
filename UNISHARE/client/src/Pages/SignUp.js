@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import { toast } from 'react-toastify';
 import Layout from '../Components/Layout';
-
+const API_BASE = 'https://unishare-backend-six.vercel.app/';
 const Signup = () => {
   const [submitSuccess, setSubmitSuccess] = useState(false);
   const navigate = useNavigate();
@@ -72,7 +72,7 @@ const Signup = () => {
       }
 
       // Make POST request to register user
-      const res = await axios.post('/api/v1/auth/register', formData);
+      const res = await axios.post(`${API_BASE}/api/v1/auth/register`, formData);
 
       if (res.data.success) {
         setSubmitSuccess(true);

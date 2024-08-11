@@ -40,7 +40,7 @@ const logRequests = (req, res, next) => {
   
  app.use(cors(corsOptions))// Allow requests only from specified origin
   
-  app.use(cors(corsOptions)); // Allow requests only from specified origin
+ 
   
 
 app.use(express.json());
