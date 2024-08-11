@@ -19,7 +19,7 @@ const io = new SocketIOServer(server);
 const connectedUsers = {};
 
 const corsOptions ={
-    origin:["https://unishare-8lwn.vercel.app/"],
+    origin:["https://unishare-ten.vercel.app/"],
     methods:["POST","GET"], 
     credentials:true,            //access-control-allow-credentials:true
     optionSuccessStatus:200,
