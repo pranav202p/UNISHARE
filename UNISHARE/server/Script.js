@@ -20,7 +20,7 @@ const connectedUsers = {};
 
 const corsOptions ={
     origin:["https://unishare-ten.vercel.app"],
-    methods:["POST","GET"], 
+    methods:["POST","GET","PUT","DELETE"], 
     credentials:true,            //access-control-allow-credentials:true
     optionSuccessStatus:200,
  }
