@@ -167,7 +167,7 @@ export default function Buy() {
         initial={{ opacity: 0, scale: 0.9 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 1 }}
-        className="bg-white rounded-3xl shadow-2xl p-10 mb-12 relative" // Added relative positioning
+        className="bg-white rounded-3xl cursor-pointer hover:shadow-2xl shadow-2xl p-10 mb-12 relative" // Added relative positioning
         style={{ minHeight: '300px' }} // Set a minimum height for each card
       >
         <div className="w-full h-48 overflow-hidden object-cover  mb-4">
