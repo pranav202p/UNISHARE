@@ -21,7 +21,7 @@ const ProductDetail = ({ categoryName }) => {
   useEffect(() => {
     const fetchProduct = async () => {
       try {
-        const response = await axios.get(`/api/v1/auth/products/${productId}`);
+        const response = await axios.get(`https://unishare.onrender.com/api/v1/auth/products/${productId}`);
         setProduct(response.data.product);
       } catch (error) {
         console.error('Error fetching product:', error);
@@ -34,7 +34,7 @@ const ProductDetail = ({ categoryName }) => {
   useEffect(() => {
     const fetchRecommendedProducts = async () => {
       try {
-        const response = await axios.get(`/api/v1/auth/products?category=${categoryName}`);
+        const response = await axios.get(`https://unishare.onrender.com/api/v1/auth/products?category=${categoryName}`);
         const filteredRecommended = response.data.products.filter(
           (recommendedProduct) => recommendedProduct._id !== productId
         );
@@ -77,7 +77,7 @@ const ProductDetail = ({ categoryName }) => {
         } while (!phoneNumberRegex.test(userPhoneNumber)); // Repeat until valid phone number is entered
   
         // If a valid phone number is entered, proceed to notify the seller
-        await axios.post('/api/v1/auth/notify-seller', {
+        await axios.post('https://unishare.onrender.com/api/v1/auth/notify-seller', {
           productId: productId,
           message: `My contact number is ${userPhoneNumber}.`,
         });
@@ -115,7 +115,7 @@ const ProductDetail = ({ categoryName }) => {
         productCondition: product.productCondition,
       };
 
-      const response = await axios.post('/api/v1/auth/user/wishlist', payload, config);
+      const response = await axios.post('https://unishare.onrender.com/api/v1/auth/user/wishlist', payload, config);
 
       setAddedToWishlist(true);
       toast.success('Product added to wishlist!');

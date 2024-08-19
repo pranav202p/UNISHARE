@@ -20,7 +20,7 @@ export default function Buy() {
   useEffect(() => {
     async function fetchProducts() {
       try {
-        const response = await axios.get('/api/v1/auth/products');
+        const response = await axios.get('https://unishare.onrender.com/api/v1/auth/products');
         console.log('Response data:', response.data);
         setProducts(response.data.products);
       } catch (error) {

@@ -21,7 +21,7 @@ const UserWishlist = () => {
         }
 
         // Send notification to seller including user's phone number
-        await axios.post('/api/v1/auth/notify-seller', {
+        await axios.post('https://unishare.onrender.com/api/v1/auth/notify-seller', {
           productId: productId,
           message: `My contact number is ${userPhoneNumber}.`, // Include user's phone number in the message
         });
@@ -55,7 +55,7 @@ const UserWishlist = () => {
         }
       };
 
-      const response = await axios.get('/api/v1/auth/wishlist', config);
+      const response = await axios.get('https://unishare.onrender.com/api/v1/auth/wishlist', config);
       setWishlist(response.data); // Assuming the API response contains wishlist data
     } catch (error) {
       console.error('Error fetching wishlist:', error);
@@ -83,7 +83,7 @@ const UserWishlist = () => {
       };
 
       // Send a request to remove the product from the wishlist
-      await axios.delete(`/api/v1/auth/wishlist/${productId}`, config);
+      await axios.delete(`https://unishare.onrender.com/api/v1/auth/wishlist/${productId}`, config);
 
       // After successful removal, fetch updated wishlist
       fetchWishlist();

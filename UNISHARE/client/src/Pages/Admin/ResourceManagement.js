@@ -14,7 +14,7 @@ export default function ResourceManagement() {
 
     useEffect(() => {
       // Fetch all resources from the backend when component mounts
-      axios.get('/api/v1/auth/products')
+      axios.get('https://unishare.onrender.com/api/v1/auth/products')
         .then(response => {
           setResources(response.data.products);
           setFilteredResources(response.data.products);
@@ -44,7 +44,7 @@ export default function ResourceManagement() {
     };
 
     const approveResource = (productId) => {
-      axios.put(`/api/v1/auth/products/${productId}/approve-reject`, { isApproved: true })
+      axios.put(`https://unishare.onrender.com/api/v1/auth/products/${productId}/approve-reject`, { isApproved: true })
         .then(response => {
           updateResourceStatus(productId, true);
           console.log('Resource approved successfully:', response.data);
@@ -53,7 +53,7 @@ export default function ResourceManagement() {
     };
 
     const rejectResource = (productId) => {
-      axios.put(`/api/v1/auth/products/${productId}/approve-reject`, { isApproved: false })
+      axios.put(`https://unishare.onrender.com/api/v1/auth/products/${productId}/approve-reject`, { isApproved: false })
         .then(response => {
           updateResourceStatus(productId, false);
           console.log('Resource rejected successfully:', response.data);
@@ -62,7 +62,7 @@ export default function ResourceManagement() {
     };
 
     const deleteResource = (productId) => {
-      axios.delete(`/api/v1/auth/products/${productId}/delete`)
+      axios.delete(`https://unishare.onrender.com/api/v1/auth/products/${productId}/delete`)
         .then(response => {
           const updatedResources = resources.filter(resource => resource._id !== productId);
           setResources(updatedResources);

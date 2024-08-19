@@ -16,7 +16,7 @@ const AnalyticsDashboard = () => {
   useEffect(() => {
     const fetchUserData = async () => {
       try {
-        const response = await axios.get('/api/v1/auth/analytics/user');
+        const response = await axios.get('https://unishare.onrender.com/api/v1/auth/analytics/user');
         setUserData(response.data);
       } catch (error) {
         console.error('Error fetching user analytics data:', error);
@@ -25,7 +25,7 @@ const AnalyticsDashboard = () => {
 
     const fetchProductData = async () => {
       try {
-        const response = await axios.get('/api/v1/auth/analytics/products');
+        const response = await axios.get('https://unishare.onrender.com/api/v1/auth/analytics/products');
         setProductData(response.data);
       } catch (error) {
         console.error('Error fetching product analytics data:', error);

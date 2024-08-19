@@ -19,7 +19,7 @@ const UserAds = () => {
     console.log(config)
       const fetchUserProducts = async () => {
         try {
-          const response = await axios.get('/api/v1/auth/user-products', config);
+          const response = await axios.get('https://unishare.onrender.com/api/v1/auth/user-products', config);
           console.log("products",response.data)
           setUserProducts(response.data.products);
           setIsLoading(false);
@@ -35,7 +35,7 @@ const UserAds = () => {
 
   const handleMarkAsSold = async (productId) => {
     try {
-      const response = await axios.put(`/api/v1/auth/mark-as-sold/${productId}`);
+      const response = await axios.put(`https://unishare.onrender.com/api/v1/auth/mark-as-sold/${productId}`);
 
       // Update the userProducts state to reflect the change
       setUserProducts((prevProducts) =>

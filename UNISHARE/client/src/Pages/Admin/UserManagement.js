@@ -12,7 +12,7 @@ export default function UserManagement() {
   const navigate = useNavigate();
   useEffect(() => {
     // Fetch users from the backend API
-    axios.get('/api/v1/auth/users')
+    axios.get('https://unishare.onrender.com/api/v1/auth/users')
       .then(response => {
         setUsers(response.data);
         setFilteredUsers(response.data);
@@ -46,7 +46,7 @@ export default function UserManagement() {
 
   const handleToggleActive = async (userId, currentIsActive) => {
     try {
-      const response = await axios.put(`/api/v1/auth/users/${userId}`, { isActive: !currentIsActive });
+      const response = await axios.put(`https://unishare.onrender.com/api/v1/auth/users/${userId}`, { isActive: !currentIsActive });
       const updatedUser = response.data;
 
       // Update user's isActive status in the local state

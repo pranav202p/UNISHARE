@@ -72,13 +72,13 @@ const Signup = () => {
       }
 
       // Make POST request to register user
-      const res = await axios.post('/api/v1/auth/register', formData);
+      const res = await axios.post('https://unishare.onrender.com/api/v1/auth/register', formData);
 
       if (res.data.success) {
         setSubmitSuccess(true);
         
         // Send email verification request
-        await axios.post('/api/v1/auth/send-verification-email', {
+        await axios.post('https://unishare.onrender.com/api/v1/auth/send-verification-email', {
           firstName: formData.firstName,
           email: formData.email
         });
@@ -95,7 +95,7 @@ const Signup = () => {
   useEffect(() => {
     const verifyEmail = async () => {
       try {
-        const response = await axios.get('api/v1/auth/verify');
+        const response = await axios.get('https://unishare.onrender.com/api/v1/auth/verify');
         console.log('Email verification response:', response.data);
         
       } catch (error) {

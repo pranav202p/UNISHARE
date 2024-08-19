@@ -30,7 +30,7 @@ export default function Sell() {
     });
 
     try {
-      const response = await axios.post('/api/v1/auth/generate-product-id', {
+      const response = await axios.post('https://unishare.onrender.com/api/v1/auth/generate-product-id', {
         productName: value
       });
 
@@ -51,7 +51,7 @@ export default function Sell() {
     });
 
     try {
-      const response = await axios.post('/api/v1/auth/generate-seller-id', {
+      const response = await axios.post('https://unishare.onrender.com/api/v1/auth/generate-seller-id', {
         SellerName: value
       });
 
@@ -70,7 +70,7 @@ export default function Sell() {
     formData.append('productImage', file);
 
     try {
-      const response = await axios.post('/api/v1/auth/upload-image', formData, {
+      const response = await axios.post('https://unishare.onrender.com/api/v1/auth/upload-image', formData, {
         headers: {
           'Content-Type': 'multipart/form-data'
         }
@@ -98,7 +98,7 @@ export default function Sell() {
     }
   
 
-      const response = await axios.post('/api/v1/auth/sell', productData);
+      const response = await axios.post('https://unishare.onrender.com/api/v1/auth/sell', productData);
       
 
       if (response.status === 201) {

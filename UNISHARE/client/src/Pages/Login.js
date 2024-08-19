@@ -31,7 +31,7 @@ export default function Login() {
     const { email, password } = formData;
   
     try {
-      const res = await axios.post('/api/v1/auth/login', formData);
+      const res = await axios.post('https://unishare.onrender.com/api/v1/auth/login', formData);
       if (res.data.success) {
         const user = res.data.user;
         if (!user.isActive) {

@@ -11,7 +11,7 @@ const Dashboard = () => {
     // Fetch user data
     const fetchUserData = async () => {
       try {
-        const response = await axios.get('/api/v1/auth/analytics/user'); // Update API endpoint
+        const response = await axios.get('https://unishare.onrender.com/api/v1/auth/analytics/user'); // Update API endpoint
         setUserData(response.data);
       } catch (error) {
         console.error('Error fetching user data:', error);
@@ -21,7 +21,7 @@ const Dashboard = () => {
     // Fetch product data
     const fetchProductData = async () => {
       try {
-        const response = await axios.get('/api/v1/auth/analytics/products'); // Update API endpoint
+        const response = await axios.get('https://unishare.onrender.com/api/v1/auth/analytics/products'); // Update API endpoint
         setProductData(response.data);
       } catch (error) {
         console.error('Error fetching product data:', error);

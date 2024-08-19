@@ -26,7 +26,7 @@ const UserProfile = () => {
         };
 
         try {
-          const response = await axios.get('/api/v1/auth/user/profile', config);
+          const response = await axios.get('https://unishare.onrender.com/api/v1/auth/user/profile', config);
           const userData = response.data.user;
           console.log(userData)
           setUserData(userData);
@@ -75,7 +75,7 @@ const UserProfile = () => {
       };
   
       try {
-        const response = await axios.post('/api/v1/auth/profile', formData, config);
+        const response = await axios.post('https://unishare.onrender.com/api/v1/auth/profile', formData, config);
         const updatedUserData = response.data.user;
         console.log(updatedUserData)
         setUserData(updatedUserData); // Update state with the new profile data
